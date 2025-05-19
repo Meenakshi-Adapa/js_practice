@@ -16,16 +16,30 @@
 
 
   <p>Amazon shipping calculatur</p>
-  <input placeholder="Cost of order" class="js-input">
-  <button onclick="calculateTotal()">Calculator</button>
+  <input placeholder="Cost of order" class="js-input"        onkeydown="handleCostKeyDown(event)">
+  <button onclick="calculateTotal()"
+  
+  >Calculator</button>
   <p class='js-res'></p>
   
   <script>
+    
+
+
+    function handleCostKeyDown(event){
+      if(event.key === 'Enter') {
+        calculateTotal();
+      }
+    }
+
+
+
+
     function calculateTotal() {
       const amt = document.querySelector('.js-input');
       const result = document.querySelector('.js-res');
       if(amt.value < 40 ) {
-        let tot = parseInt(amt.value) + 10;
+        let tot = Number(amt.value) + 10;
         result.innerHTML = `$${tot}`;
       } else {
        result.innerHTML = `$${amt.value}`;
