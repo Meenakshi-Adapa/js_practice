@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Amazon shipping calculatur</p>
+  <input placeholder="Cost of order" class="js-input"        onkeydown="handleCostKeyDown(event)">
+  <button onclick="calculateTotal()"
+  
+  >Calculator</button>
+  <p class='js-res'></p>
+  <script>
+         function handleCostKeyDown(event){
+      if(event.key === 'Enter') {
+        calculateTotal();
+      }
+    }
+
+
+
+
+    function calculateTotal() {
+      const amt = document.querySelector('.js-input');
+      const result = document.querySelector('.js-res');
+
+      if(amt.value < 40 ) {
+        let tot = Number(amt.value) + 10;
+        result.innerHTML = `$${Math.round(tot)}`;
+      } else {
+       result.innerHTML = `$${amt.value}`;
+      }
+
+    }
+  </script>
+</body>
+</html>
