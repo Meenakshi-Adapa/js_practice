@@ -10,19 +10,44 @@
   <button class="js-subscribe-button" onclick="
   subscribe();
    ">Subscribe</button>
-
+  
   <p>rock paper scissor</p>
-  <a href="08-rock-paper-scissor.html">click here</a>
+  <a href="09-rockPaperScissors.html">click here</a>
+
+
+  <p>Amazon shipping calculatur</p>
+  <input placeholder="Cost of order" class="js-input">
+  <button onclick="calculateTotal()">Calculator</button>
+  <p class='js-res'></p>
   
   <script>
+    function calculateTotal() {
+      const amt = document.querySelector('.js-input');
+      const result = document.querySelector('.js-res');
+      if(amt.value < 40 ) {
+        let tot = parseInt(amt.value) + 10;
+        result.innerHTML = `$${tot}`;
+      } else {
+       result.innerHTML = `$${amt.value}`;
+      }
+
+    }
+
+
+
+
+
+
     function subscribe() {
        var button = document.querySelector('.js-subscribe-button');
-  if(button.innerHTML === 'Subscribe') {
-    button.innerHTML = 'Subscribed';
-  } else {
-    button.innerHTML = 'Subscribe';
-  }
+        if(button.innerHTML === 'Subscribe') {
+          button.innerHTML = 'Subscribed';
+        } else {
+          button.innerHTML = 'Subscribe';
+        }
     }
+
+    
 
   </script>
 </body>
