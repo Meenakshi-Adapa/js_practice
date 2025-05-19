@@ -8,48 +8,60 @@
 <body>
   <h1>Rock Paper Scissors</h1>
   <button id="rock" onclick="
-    ComputerMove();
-     result = ComputerMove();
-    if(result === 'Rock') {
-      msg = 'tie!';
-    } else if (result === 'Paper') {
-      msg = ' you Win!';
-    } else if (result === 'Scissors') {
-      msg = 'you Lose!';
-    }
-    alert(`Computer Move: ${result} \n Your Move: Rock \n Result: ${msg}`);
+
+    playGame('rock');
+   
+  
   ">Rock</button>
 
   <button id="paper" onclick = "
-     ComputerMove();
-    result = ComputerMove();
-    if(result === 'Rock') {
-      msg = ' you Win!';
-    } else if (result === 'Paper') {
-      msg = 'tie!';
-    } else if (result === 'Scissors') {
-      msg = 'you Lose!';
-    }
-    alert(`Computer Move: ${result} \n Your Move: Paper \n Result: ${msg}`);
+    
+    playGame('paper');
+   
 
   ">Paper</button>
 
   <button id="scissors" onclick = "
-     ComputerMove();
-    result = ComputerMove();
-    if(result === 'Rock') {
+
+    playGame('scissors');
+    
+  ">Scissors</button>
+
+  <script>
+    function playGame(choice) {
+      ComputerMove();
+      result = ComputerMove();
+    if(choice === 'scissors') {
+      if(result === 'Rock') {
       msg = 'you Lose!';
     } else if (result === 'Paper') {
       msg = ' you Win!';
     } else if (result === 'Scissors') {
       msg = 'tie!';
     }
-    alert(`Computer Move: ${result} \n Your Move: Scissor \n Result: ${msg}`);
-  ">Scissors</button>
+    
+    } else if(choice === 'rock') {
+        
+      if(result === 'Rock') {
+        msg = 'tie!';
+      } else if (result === 'Paper') {
+        msg = ' you Win!';
+      } else if (result === 'Scissors') {
+          msg = 'you Lose!';
+      }
 
-  <script>
-   
-   
+    } else if(choice === 'paper') {
+        if(result === 'Rock') {
+          msg = ' you Win!';
+        } else if (result === 'Paper') {
+            msg = 'tie!';
+        } else if (result === 'Scissors') {
+            msg = 'you Lose!';
+        }
+
+    }
+    alert(`Computer Move: ${result} \n Your Move: ${choice} \n Result: ${msg}`);
+  } 
     function ComputerMove() {
     computerMove = Math.random();
       let result = '  ';

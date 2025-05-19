@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<h1> Calculator </h1>
+<p>
+<button id = "1" onclick = "
+  updateCalculation('1')
+" > 1 </button>
+
+<button id = "2" onclick = "
+  updateCalculation('2')
+"> 2 </button>
+
+<button id = "3" onclick = "
+  updateCalculation('3')
+"> 3 </button>
+
+<button id = "+" onclick = "
+  updateCalculation('+')
+"> + </button>
+</p>
+<p>
+<button id = "4" onclick = "
+  updateCalculation('4')
+"> 4 </button>
+
+<button id = "5" onclick = "
+  updateCalculation('5')
+"> 5 </button>
+
+<button id = "6" onclick = "
+  updateCalculation('6')
+"> 6 </button>
+
+<button id = "-" onclick = "
+  updateCalculation('-')
+"> - </button>
+</p>
+<p>
+<button id = "7" onclick = "
+  updateCalculation('7')
+"> 7 </button>
+
+<button id = "8" onclick = "
+  updateCalculation('8')
+"> 8 </button>
+
+<button id = "9" onclick = "
+  updateCalculation('9')
+"> 9 </button>
+
+<button id = "*" onclick = "
+  updateCalculation('*')
+"> * </button>
+</p>
+<p>
+<button id = "0" onclick = "
+  updateCalculation('0')
+"> 0 </button>
+
+<button id = "." onclick = "
+  updateCalculation('.')
+"> . </button>
+
+<button id = "=" onclick = "
+  updateCalculation('=')
+"> = </button>
+
+<button id = "/" onclick = "
+  updateCalculation('/')
+"> / </button>
+</p>
+<button id = "Clear" onclick = "
+calculator = ''
+console.log(`${calculator}`);
+
+"> Clear</button>
+
+<body>
+  <script>
+    let calculator = "";
+    let res = 0;
+    function updateCalculation(value) {
+      console.log(`${calculator}`);
+      if (value === '=') {
+        let res = eval(calculator);
+        console.log(res);
+      } else {
+        calculator += value;
+      }
+      
+    }
+  </script>
+</body>
+</html>
