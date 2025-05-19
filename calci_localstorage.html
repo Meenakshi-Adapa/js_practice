@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Functions-calci</title>
+  <title>Document</title>
 </head>
 <h1> Calculator </h1>
 <p>
@@ -76,13 +76,14 @@
 </p>
 <button id = "Clear" onclick = "
 calculator = ''
+localStorage.removeItem('calci');
 console.log(`${calculator}`);
 
 "> Clear</button>
 
 <body>
   <script>
-    let calculator = "";
+    let calculator = localStorage.getItem("calci") || "";
     let res = 0;
     function updateCalculation(value) {
       console.log(`${calculator}`);
@@ -92,7 +93,7 @@ console.log(`${calculator}`);
       } else {
         calculator += value;
       }
-      
+      localStorage.setItem('calci',calculator);
     }
   </script>
 </body>
