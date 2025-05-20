@@ -1,0 +1,113 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects</title>
+  <style>
+    .js-subscribe-button {
+      border: none;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      height: 35px;
+      width:90px;
+      border-radius: 40px;
+      cursor: pointer;
+      margin-bottom: 30px;
+
+    }
+    .is-subscribed{
+        background-color: rgb(240, 240, 240);
+        color: rgb(1, 1, 1);
+    }
+   
+    .js-input {
+      padding-left: 10px;
+      font-size: 15px;
+      height: 35px;
+      width: 200px;
+
+    }
+    .calcu {
+      border: none;
+      background-color: green;
+      color: white;
+      height: 40px;
+      width: 80px;
+      cursor: pointer;
+    }
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <p>YouTube Subscribe Button</p>
+  <button class="js-subscribe-button" onclick="
+  subscribe();
+   ">Subscribe</button>
+  
+  
+
+
+  <p>Amazon shipping calculatur</p>
+  <input placeholder="Cost of order" class="js-input" onkeydown="handleCostKeyDown(event)">
+  <button class="calcu" onclick="calculateTotal()"
+  
+  >Calculate</button>
+  <p class='js-res'></p>
+
+
+  <p>rock paper scissor</p>
+  <a href="09-rockPaperScissors.html">click here</a>
+  
+  <script>
+    
+
+
+    function handleCostKeyDown(event){
+      if(event.key === 'Enter') {
+        calculateTotal();
+      }
+    }
+
+
+
+
+    function calculateTotal() {
+      const amt = document.querySelector('.js-input');
+      const result = document.querySelector('.js-res');
+      if(amt.value < 40 ) {
+        let tot = Number(amt.value) + 10;
+        result.innerHTML = `$${tot}`;
+      } else {
+       result.innerHTML = `$${amt.value}`;
+      }
+
+    }
+
+
+
+
+
+
+    function subscribe() {
+       var button = document.querySelector('.js-subscribe-button');
+        if(button.innerHTML === 'Subscribe') {
+          button.innerHTML = 'Subscribed';
+          button.classList.add('is-subscribed');
+        } else {
+          button.innerHTML = 'Subscribe';
+          button.classList.remove('is-subscribed');
+        }
+    }
+
+    
+
+  </script>
+</body>
+</html>
